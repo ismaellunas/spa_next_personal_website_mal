@@ -2,6 +2,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
+
 // Simple SVG icon components to avoid import issues
 const MenuIcon = ({ className }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,21 +92,27 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      company: "TechStart Solutions",
-      text: "Working with this VA transformed our marketing efforts. Our social media engagement increased by 300% in just 3 months!",
+      name: "Luke",
+      image: "https://res.cloudinary.com/dmorlddtq/image/upload/IMG_5391_jegcej.jpg", // Replace with actual client photo
+      text: "The email marketing campaigns and lead generation strategies were game-changing for our business. The graphic designs perfectly captured our brand identity. Professional work that delivered real results!",
       rating: 5
     },
     {
-      name: "Mike Chen",
-      company: "Local Fitness Studio",
-      text: "The email campaigns generated 25 new members in our first month. Exceptional work and great communication throughout.",
+      name: "Christine",
+      image: "https://res.cloudinary.com/dmorlddtq/image/upload/IMG_5389_vlqpoe.jpg", // Replace with actual client photo
+      text: "Exceptional graphic design work and seamless social media management. Our brand presence has never looked better, and engagement rates have significantly improved across all platforms.",
       rating: 5
     },
     {
-      name: "Emily Rodriguez",
-      company: "Boutique Consulting",
-      text: "From lead generation to content creation, every deliverable exceeded expectations. Highly recommend!",
+      name: "Amy",
+      image: "https://res.cloudinary.com/dmorlddtq/image/upload/IMG_5390_kmkl3p.jpg", // Replace with actual client photo
+      text: "A complete marketing transformation! From stunning graphics to engaging content and effective email campaigns, every aspect exceeded expectations. Truly a one-stop solution for all our needs.",
+      rating: 5
+    },
+    {
+      name: "Caroline",
+      image: "https://res.cloudinary.com/dmorlddtq/image/upload/IMG_5388_hxx7fx.jpg", // Replace with actual client photo
+      text: "Outstanding work across multiple areas! The graphics are beautiful, content is engaging, and the influencer outreach brought amazing partnerships. Lead generation results speak for themselves.",
       rating: 5
     }
   ]
@@ -196,8 +203,13 @@ export default function Home() {
 
       <main className="pt-16">
         {/* Hero Section */}
-        <section id="home" className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="home" className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 bg-pattern-waves py-20 relative overflow-hidden">
+          {/* Floating elements */}
+          <div className="floating-element w-20 h-20 bg-indigo-200 opacity-20 top-20 left-10"></div>
+          <div className="floating-element w-16 h-16 bg-purple-200 opacity-30 top-40 right-20"></div>
+          <div className="floating-element w-12 h-12 bg-pink-200 opacity-25 bottom-32 left-1/4"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 Your Success,
@@ -225,8 +237,8 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="about" className="py-20 bg-white relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -281,8 +293,13 @@ export default function Home() {
         </section>
 
         {/* More About Me Section */}
-        <section className="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 bg-pattern-waves relative overflow-hidden">
+          {/* Floating elements */}
+          <div className="floating-element w-24 h-24 bg-indigo-200 opacity-15 top-16 right-16"></div>
+          <div className="floating-element w-18 h-18 bg-purple-200 opacity-25 bottom-20 left-20"></div>
+          <div className="floating-element w-14 h-14 bg-pink-200 opacity-20 top-1/2 right-1/4"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
@@ -347,8 +364,8 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="services" className="py-20 bg-gray-50 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Services That Drive Results
@@ -376,8 +393,13 @@ export default function Home() {
         </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="portfolio" className="py-20 bg-white bg-pattern-waves relative overflow-hidden">
+          {/* Floating elements */}
+          <div className="floating-element w-22 h-22 bg-indigo-200 opacity-20 top-24 left-12"></div>
+          <div className="floating-element w-16 h-16 bg-purple-200 opacity-25 bottom-16 right-16"></div>
+          <div className="floating-element w-12 h-12 bg-pink-200 opacity-30 top-1/3 left-1/3"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Recent Work & Results
@@ -409,8 +431,8 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="testimonials" className="py-20 bg-gray-50 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 What Clients Say
@@ -420,19 +442,43 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <StarIcon key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
+                <div key={index} className="bg-white rounded-xl p-6 shadow-lg relative">
+                  {/* Client Photo */}
+                  <div className="flex items-start mb-4">
+                    <div className="flex-shrink-0 mr-4">
+                      <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg border-2 border-indigo-200 relative">
+                        <Image
+                          src={testimonial.image}
+                          alt={`${testimonial.name} - Client`}
+                          width={56}
+                          height={56}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to initial bubble if image fails
+                            e.target.style.display = 'none';
+                            const fallback = e.target.parentElement.querySelector('.fallback-initial');
+                            if (fallback) fallback.style.display = 'flex';
+                          }}
+                        />
+                        {/* Fallback initial bubble (hidden by default) */}
+                        <div className="fallback-initial absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-lg" style={{display: 'none'}}>
+                          {testimonial.name.charAt(0)}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex mb-2">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <StarIcon key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                        ))}
+                      </div>
+                      <div className="font-bold text-gray-900">{testimonial.name}</div>
+                    </div>
                   </div>
-                  <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
-                  <div>
-                    <div className="font-bold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-500">{testimonial.company}</div>
-                  </div>
+                  
+                  <p className="text-gray-600 italic leading-relaxed">"{testimonial.text}"</p>
                 </div>
               ))}
             </div>
@@ -440,8 +486,13 @@ export default function Home() {
         </section>
 
         {/* Process Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-white bg-pattern-waves relative overflow-hidden">
+          {/* Floating elements */}
+          <div className="floating-element w-20 h-20 bg-indigo-200 opacity-15 top-20 right-24"></div>
+          <div className="floating-element w-14 h-14 bg-purple-200 opacity-20 bottom-24 left-16"></div>
+          <div className="floating-element w-18 h-18 bg-pink-200 opacity-25 top-2/3 right-1/3"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 How We Work Together
@@ -471,8 +522,8 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-gray-50 relative">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Frequently Asked Questions
@@ -515,8 +566,13 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="contact" className="py-20 bg-white bg-pattern-waves relative overflow-hidden">
+          {/* Floating elements */}
+          <div className="floating-element w-16 h-16 bg-indigo-200 opacity-20 top-16 left-16"></div>
+          <div className="floating-element w-20 h-20 bg-purple-200 opacity-15 bottom-20 right-20"></div>
+          <div className="floating-element w-12 h-12 bg-pink-200 opacity-25 top-1/2 left-1/4"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Let's Start Your Project
@@ -534,7 +590,7 @@ export default function Home() {
                     <MailIcon className="h-6 w-6 text-indigo-600 mr-4" />
                     <div>
                       <div className="font-medium text-gray-900">Email</div>
-                      <div className="text-gray-600">hello@vapro.com</div>
+                      <div className="text-gray-600">hello@workwithmaryhel.me</div>
                     </div>
                   </div>
                   <div className="flex items-center">
