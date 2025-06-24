@@ -152,7 +152,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-indigo-600">VA Pro</h1>
+              <h1 className="text-2xl font-bold text-indigo-600">Work With Maryhel</h1>
             </div>
             
             {/* Desktop Navigation */}
@@ -616,12 +616,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold mb-4">VA Pro</h3>
+              <h3 className="text-2xl font-bold mb-4">Work With Maryhel</h3>
               <p className="text-gray-400 mb-4">
                 Professional virtual assistant services that help your business grow. From creative design to strategic marketing, I'm here to support your success.
               </p>
               <div className="text-sm text-gray-400">
-                © 2025 VA Pro. All rights reserved.
+                © 2025 Work With Maryhel. All rights reserved.
               </div>
             </div>
             <div>
