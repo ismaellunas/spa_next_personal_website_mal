@@ -261,7 +261,7 @@ export default function Home() {
               {/* Photo Container with Gradient Overlay */}
               <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl border-4 border-white relative">
                 <Image
-                  src="/images/me2.png"
+                  src="/images/me3.jpg"
                   alt="Maryhel - Professional Virtual Assistant"
                   fill
                   className="object-cover"
@@ -439,7 +439,7 @@ export default function Home() {
                   {/* Your Photo from Cloudinary */}
                   <div className="aspect-[4/5] relative overflow-hidden">
                     <Image
-                      src="https://res.cloudinary.com/dmorlddtq/image/upload/me_qixpao.jpg"
+                      src="/images/me.jpg"
                       alt="Professional Virtual Assistant"
                       fill
                       className="object-cover"
