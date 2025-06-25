@@ -50,6 +50,14 @@ const MapPinIcon = ({ className }) => (
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeService, setActiveService] = useState(0)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: '',
+    message: ''
+  })
+  const [formStatus, setFormStatus] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const services = [
     {
@@ -143,6 +151,44 @@ export default function Home() {
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
     setIsMenuOpen(false)
+  }
+
+  const handleInputChange = (e) => {
+  const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setFormStatus('')
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`New Inquiry from ${formData.name} - ${formData.service}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Service Needed: ${formData.service}\n` +
+      `Message:\n${formData.message}`
+    )
+    
+    // Open email client with pre-filled data
+    window.location.href = `mailto:inquire@workwithmaryhel.me?subject=${subject}&body=${body}`
+    
+    // Reset form after a short delay
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        email: '',
+        service: '',
+        message: ''
+      })
+      setFormStatus('Your email client has been opened. Please send the email to complete your inquiry.')
+      setIsSubmitting(false)
+    }, 1000)
   }
 
   return (
@@ -420,12 +466,14 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12">
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors"
+              <a 
+                href="/portfolio.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors"
               >
                 View Full Portfolio
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -590,14 +638,14 @@ export default function Home() {
                     <MailIcon className="h-6 w-6 text-indigo-600 mr-4" />
                     <div>
                       <div className="font-medium text-gray-900">Email</div>
-                      <div className="text-gray-600">hello@workwithmaryhel.me</div>
+                      <div className="text-gray-600">inquire@workwithmaryhel.me</div>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <PhoneIcon className="h-6 w-6 text-indigo-600 mr-4" />
                     <div>
                       <div className="font-medium text-gray-900">Phone</div>
-                      <div className="text-gray-600">+1 (555) 123-4567</div>
+                      <div className="text-gray-600">+63 (967) 367-7545</div>
                     </div>
                   </div>
                   <div className="flex items-center">
@@ -616,11 +664,15 @@ export default function Home() {
               </div>
 
               <div className="bg-gray-50 rounded-xl p-8">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                     <input 
                       type="text" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                       placeholder="Your full name"
                     />
@@ -629,37 +681,57 @@ export default function Home() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                     <input 
                       type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                       placeholder="your@email.com"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Services Needed</label>
-                    <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                      <option>Select a service</option>
-                      <option>Graphic Design</option>
-                      <option>Content Creation</option>
-                      <option>Lead Generation</option>
-                      <option>Email Marketing</option>
-                      <option>Social Media Management</option>
-                      <option>Influencer Outreach</option>
-                      <option>Multiple Services</option>
+                    <select 
+                      name="service"
+                      value={formData.service}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="Graphic Design">Graphic Design</option>
+                      <option value="Content Creation">Content Creation</option>
+                      <option value="Lead Generation">Lead Generation</option>
+                      <option value="Email Marketing">Email Marketing</option>
+                      <option value="Social Media Management">Social Media Management</option>
+                      <option value="Influencer Outreach">Influencer Outreach</option>
+                      <option value="Multiple Services">Multiple Services</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Project Details</label>
                     <textarea 
                       rows={4}
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                       placeholder="Tell me about your project, timeline, and any specific requirements..."
                     ></textarea>
                   </div>
                   <button 
                     type="submit"
-                    className="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {isSubmitting ? 'Opening Email Client...' : 'Send Message'}
                   </button>
+                  {formStatus && (
+                    <div className="mt-4 p-4 bg-blue-50 text-blue-700 rounded-lg text-sm">
+                      {formStatus}
+                    </div>
+                  )}
                 </form>
               </div>
             </div>
