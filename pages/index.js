@@ -255,16 +255,48 @@ export default function Home() {
           <div className="floating-element w-16 h-16 bg-purple-200 opacity-30 top-40 right-20"></div>
           <div className="floating-element w-12 h-12 bg-pink-200 opacity-25 bottom-32 left-1/4"></div>
           
+          {/* Hero Photo in Right Corner */}
+          <div className="absolute top-8 right-8 hidden lg:block z-20">
+            <div className="relative">
+              {/* Photo Container with Gradient Overlay */}
+              <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl border-4 border-white relative">
+                <Image
+                  src="/images/me2.png"
+                  alt="Maryhel - Professional Virtual Assistant"
+                  fill
+                  className="object-cover"
+                  sizes="192px"
+                  priority
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-500/10 to-transparent rounded-full"></div>
+              </div>
+              
+              {/* Decorative Elements Around Photo */}
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full shadow-lg animate-pulse"></div>
+              <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full shadow-lg"></div>
+              <div className="absolute top-1/2 -left-4 w-4 h-4 bg-gradient-to-br from-indigo-300 to-blue-400 rounded-full shadow-lg"></div>
+              
+              {/* Floating Badge */}
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white rounded-full px-4 py-2 shadow-lg border border-indigo-100">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-gray-700">Available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center">
+            <div className="text-center lg:text-left lg:max-w-3xl">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 Your Success,
                 <span className="text-indigo-600"> Simplified</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl">
                 Professional virtual assistant services that help your business grow. From stunning graphics to strategic marketing campaigns, I handle the details so you can focus on what matters most.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button 
                   onClick={() => scrollToSection('services')}
                   className="bg-indigo-600 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-indigo-700 transition-colors shadow-lg"
@@ -278,6 +310,23 @@ export default function Home() {
                   Get Started
                 </button>
               </div>
+            </div>
+          </div>
+          
+          {/* Mobile Photo Version */}
+          <div className="lg:hidden mt-12 flex justify-center relative z-10">
+            <div className="relative">
+              <div className="w-32 h-32 rounded-full overflow-hidden shadow-xl border-3 border-white relative">
+                <Image
+                  src="https://res.cloudinary.com/dmorlddtq/image/upload/me_qixpao.jpg"
+                  alt="Maryhel - Professional Virtual Assistant"
+                  fill
+                  className="object-cover"
+                  sizes="128px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-500/10 to-transparent rounded-full"></div>
+              </div>
+              <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full shadow-lg"></div>
             </div>
           </div>
         </section>
