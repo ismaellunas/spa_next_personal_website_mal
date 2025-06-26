@@ -197,7 +197,11 @@ export default function Home() {
         <title>Professional Virtual Assistant Services | Graphic Design, Marketing & More</title>
         <meta name="description" content="Expert virtual assistant specializing in graphic design, content creation, lead generation, email marketing, social media management, and influencer outreach." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
+        <link rel="icon" href="/favicon.ico"></link>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
+        <link rel="manifest" href="/site.webmanifest"></link>
       </Head>
 
       {/* Navigation */}
