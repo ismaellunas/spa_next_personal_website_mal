@@ -205,7 +205,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-indigo-600">Work With Maryhel</h1>
+              <h1 className="text-2xl font-bold text-primary-600">Work With Maryhel</h1>
             </div>
             
             {/* Desktop Navigation */}
@@ -758,7 +758,7 @@ export default function Home() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Project Details</label>
+                    <label className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">Project Details</label>
                     <textarea 
                       rows={4}
                       name="message"

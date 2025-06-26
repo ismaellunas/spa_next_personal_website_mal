@@ -9,11 +9,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#4c1d95', // Royal indigo
+          600: '#3730a3',
+          700: '#312e81',
+          800: '#1e1b4b',
+          900: '#0f0f23',
         },
       },
       fontFamily: {
