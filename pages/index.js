@@ -2,6 +2,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
+import dynamic from 'next/dynamic';
+
+const PDFViewer = dynamic(() => import('../components/PDFViewer'), { ssr: false });
 
 // Simple SVG icon components to avoid import issues
 const MenuIcon = ({ className }) => (
@@ -285,7 +288,7 @@ export default function Home() {
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white rounded-full px-4 py-2 shadow-lg border border-indigo-100">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-gray-700">Available</span>
+                  <span onClick={() => scrollToSection('contact')} className="text-sm font-medium text-gray-700 cursor-pointer">Available</span>
                 </div>
               </div>
             </div>
@@ -533,25 +536,30 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {portfolioItems.map((item, index) => (
-                <div key={index} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                  <div className="text-sm text-indigo-600 font-medium mb-2">{item.category}</div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+            {/* Portfolio Content with 30/70 Split */}
+            <div className="flex flex-col lg:flex-row gap-8 h-[800px]">
+              {/* Left Column - 30% width */}
+              <div className="lg:w-[40%] space-y-6">
+                <div className="grid gap-6">
+                  {portfolioItems.map((item, index) => (
+                    <div key={index} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                      <div className="text-sm text-indigo-600 font-medium mb-2">{item.category}</div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
 
-            <div className="text-center mt-12">
-              <a 
-                href="/portfolio.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors"
+              {/* Right Column - 70% width - PDF Viewer */}
+              <div 
+                className="lg:w-[60%] bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden"
+                style={{ height: '600px' }}
               >
-                View Full Portfolio
-              </a>
+                <div className="h-full">
+                  <PDFViewer file="/portfolio.pdf" embedded={true} />
+                </div>
+              </div>
             </div>
           </div>
         </section>
