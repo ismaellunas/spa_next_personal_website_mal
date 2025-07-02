@@ -364,27 +364,52 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              
+              {/* CV Setion */}
               <div className="relative">
-                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-8 text-white">
-                  <h3 className="text-2xl font-bold mb-4">Why Choose Me?</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircleIcon className="h-6 w-6 mr-3 mt-0.5 text-indigo-200" />
-                      <span>Comprehensive skill set across multiple disciplines</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircleIcon className="h-6 w-6 mr-3 mt-0.5 text-indigo-200" />
-                      <span>Data-driven approach to all marketing strategies</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircleIcon className="h-6 w-6 mr-3 mt-0.5 text-indigo-200" />
-                      <span>Clear communication and regular progress updates</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircleIcon className="h-6 w-6 mr-3 mt-0.5 text-indigo-200" />
-                      <span>Flexible packages to fit your budget and needs</span>
-                    </li>
-                  </ul>
+                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-8 text-white">
+                  
+                  {/* CV Preview */}
+                  <a 
+                    href="/maryhelagudoresume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group cursor-pointer"
+                  >
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border-2 border-white/20 hover:border-white/40 transition-all duration-300 hover:bg-white/20">
+                      <div className="flex items-center justify-between mb-3">
+                        <h4 className="text-lg font-semibold">View My Resume</h4>
+                        <svg className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </div>
+                      
+                      {/* PDF Preview Container */}
+                      <div className="relative bg-white rounded overflow-hidden shadow-lg" style={{ height: '400px' }}>
+                        <iframe 
+                          src="/maryhelagudoresume.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                          className="w-full h-full"
+                          title="Resume Preview"
+                          style={{ border: 'none' }}
+                        />
+                        
+                        {/* Overlay to ensure click opens in new tab */}
+                        <div className="absolute inset-0 bg-transparent hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+                          <div className="bg-black/75 text-white px-4 py-2 rounded-lg flex items-center space-x-2">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span className="text-sm font-medium">Click to view full resume</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <p className="text-xs text-white/80 mt-3 text-center">
+                        Click to open resume in a new tab
+                      </p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
