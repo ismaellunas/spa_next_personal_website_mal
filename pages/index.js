@@ -425,6 +425,51 @@ export default function Home() {
           </div>
         </section>
 
+             {/* Portfolio Section */}
+        <section id="portfolio" className="py-20 bg-white bg-pattern-waves relative overflow-hidden">
+          {/* Floating elements */}
+          <div className="floating-element w-22 h-22 bg-indigo-200 opacity-20 top-24 left-12"></div>
+          <div className="floating-element w-16 h-16 bg-purple-200 opacity-25 bottom-16 right-16"></div>
+          <div className="floating-element w-12 h-12 bg-pink-200 opacity-30 top-1/3 left-1/3"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Recent Work & Results
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                A showcase of successful projects and the measurable impact delivered for clients
+              </p>
+            </div>
+
+            {/* Portfolio Content with 30/70 Split */}
+            <div className="flex flex-col lg:flex-row gap-8 h-[800px]">
+              {/* Left Column - 30% width */}
+              <div className="lg:w-[40%] space-y-6">
+                <div className="grid gap-6">
+                  {portfolioItems.map((item, index) => (
+                    <div key={index} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                      <div className="text-sm text-indigo-600 font-medium mb-2">{item.category}</div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column - 70% width - PDF Viewer */}
+              <div 
+                className="lg:w-[60%] bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden"
+                style={{ height: '600px' }}
+              >
+                <div className="h-full">
+                  <PDFViewer file="/portfolio.pdf" embedded={true} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* More About Me Section */}
         <section className="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 bg-pattern-waves relative overflow-hidden">
           {/* Floating elements */}
@@ -525,53 +570,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Portfolio Section */}
-        <section id="portfolio" className="py-20 bg-white bg-pattern-waves relative overflow-hidden">
-          {/* Floating elements */}
-          <div className="floating-element w-22 h-22 bg-indigo-200 opacity-20 top-24 left-12"></div>
-          <div className="floating-element w-16 h-16 bg-purple-200 opacity-25 bottom-16 right-16"></div>
-          <div className="floating-element w-12 h-12 bg-pink-200 opacity-30 top-1/3 left-1/3"></div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Recent Work & Results
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                A showcase of successful projects and the measurable impact delivered for clients
-              </p>
-            </div>
-
-            {/* Portfolio Content with 30/70 Split */}
-            <div className="flex flex-col lg:flex-row gap-8 h-[800px]">
-              {/* Left Column - 30% width */}
-              <div className="lg:w-[40%] space-y-6">
-                <div className="grid gap-6">
-                  {portfolioItems.map((item, index) => (
-                    <div key={index} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                      <div className="text-sm text-indigo-600 font-medium mb-2">{item.category}</div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Column - 70% width - PDF Viewer */}
-              <div 
-                className="lg:w-[60%] bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden"
-                style={{ height: '600px' }}
-              >
-                <div className="h-full">
-                  <PDFViewer file="/portfolio.pdf" embedded={true} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-20 bg-gray-50 relative">
+        <section id="testimonials" className="py-20 bg-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
