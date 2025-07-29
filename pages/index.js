@@ -88,10 +88,10 @@ export default function Home() {
       icon: "🎯"
     },
     {
-      title: "Email Marketing",
-      description: "Campaigns that build relationships",
-      details: "From welcome sequences to promotional campaigns, I create email strategies that nurture leads and drive conversions.",
-      icon: "📧"
+      title: "Calendar Management",
+      description: "Stay organized and never miss a meeting",
+      details: "Efficient scheduling, meeting coordination, and proactive reminders to keep your calendar running smoothly and your time optimized.",
+      icon: "📅"
     },
     {
       title: "Social Media Management",
@@ -151,9 +151,9 @@ export default function Home() {
       description: "300% follower increase in 90 days"
     },
     {
-      category: "Email Marketing",
-      title: "Welcome Email Sequence",
-      description: "5-part onboarding series with 45% open rate"
+      category: "Calendar Management",
+      title: "Executive Calendar Overhaul",
+      description: "Streamlined scheduling and improved meeting efficiency"
     }
   ]
 
@@ -808,7 +808,7 @@ export default function Home() {
                       <option value="Graphic Design">Graphic Design</option>
                       <option value="Content Creation">Content Creation</option>
                       <option value="Lead Generation">Lead Generation</option>
-                      <option value="Email Marketing">Email Marketing</option>
+                      <option value="Calendar Management">Calendar Management</option>
                       <option value="Social Media Management">Social Media Management</option>
                       <option value="Influencer Outreach">Influencer Outreach</option>
                       <option value="Multiple Services">Multiple Services</option>
